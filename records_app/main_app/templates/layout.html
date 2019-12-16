@@ -1,0 +1,73 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"  media="screen,projection"/>
+    <meta charset="UTF-8">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>{% block title %}Temperature Entries{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  </head>
+  <body>
+
+    {% block navbar %}
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper teal">
+          <a href="#" class="brand-logo">Temperature Entries</a>
+        </div>
+      </nav>
+    </div>   
+    {% endblock %} 
+
+    <div class="container">
+      {% block content %}
+
+      {% endblock %}
+    </div>
+
+    {% block footer %}
+      <footer class="page-footer teal">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="white-text">Robley Gori</h5>
+              <p class="grey-text text-lighten-4">
+                My name is Robley Gori and I am a Python developer from Kenya with 4 years of professional programming experience in technologies ranging from Python, JavaScript, Java, SQL, and DevOps.
+              </p>
+              <p>
+                More details attached on the links section.
+              </p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+              <h5 class="white-text">Links</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="https://github.com/ro6ley">Github</a></li>
+                <li><a class="grey-text text-lighten-3" href="https://www.linkedin.com/in/robleygori/">LinkedIn</a></li>
+                <li><a class="grey-text text-lighten-3" href="http://ro6ley.github.io/">Personal Website</a></li>
+                <li><a class="grey-text text-lighten-3" href="https://ro6ley.github.io/cv/">CV/Resume</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+            Built with Django + MaterializeCSS
+          <!-- <a class="grey-text text-lighten-4 right" href="#!">More Links</a> -->
+          </div>
+        </div>
+      </footer>
+    {% endblock %}
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>

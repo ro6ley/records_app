@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <table class="striped responsive-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Timestamp</th>
+          <th>Temperature</th>
+          <th>Duration</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for entry in entries %}
+          <tr>
+            <td> <a href="{% url 'entry_details_view' pk=entry.id %}"> {{ entry.id }} </a> </td>
+            <td> {{ entry.timestamp }}</td>
+            <td> {{ entry.temperature }}</td>
+            <td> {{ entry.duration }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    {% if is_paginated %}
+      <ul class="pagination center">
+        {% if page_obj.has_previous %}
+          <li><a href="?page={{ page_obj.previous_page_number }}"><i class="material-icons">chevron_left</i></a></li>
+        {% else %}
+          <li class="disabled"><span><i class="material-icons">chevron_left</i></span></li>
+        {% endif %}
+        {% for i in paginator.page_range %}
+          {% if page_obj.number == i %}
+            <li class="active"> <a href="#!"> {{ page_obj.number }} </a> </li>
+          {% else %}
+            <li><a class="waves-effect" href="?page={{ i }}">{{ i }}</a></li>
+          {% endif %}
+        {% endfor %}
+        {% if page_obj.has_next %}
+          <li><a href="?page={{ page_obj.next_page_number }}"><i class="material-icons">chevron_right</i></a></li>
+        {% else %}
+          <li class="disabled"><span><i class="material-icons">chevron_right</i></span></li>
+        {% endif %}
+      </ul>
+    {% endif %}
+
+{% endblock %}
