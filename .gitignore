@@ -2,7 +2,7 @@
 .DS_Store
 Desktop.ini
 env/
-
+**/__pycache__
 
 # Thumbnail cache files
 ._*
