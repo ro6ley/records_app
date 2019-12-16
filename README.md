@@ -31,8 +31,8 @@ Kindly ensure you have the following installed:
 3. Create a PostgreSQL user with the username and password `demouser` and create a database called `records_app`:
 
     ```
-    $ sudo su - postgres -c 'createuser -d -P demouser'
-    $ sudo su - postgres -c 'createdb records_app'
+    $ createuser --interactive --pwprompt
+    $ createdb records_app
     ```
 
 4. Transfer the task data into the database by executing the `dt_transfer.py` script:
@@ -48,6 +48,7 @@ Kindly ensure you have the following installed:
 5. Run Django Migrations:
 
     ```
+    $ cd records_app
     $ python manage.py migrate
     ```
 
@@ -61,4 +62,10 @@ Kindly ensure you have the following installed:
 
 ## Stack + Justifications
 
+Web Application built using **Django Framework**.
+
+Justification:
+- It is a well-established feature-rich framework 
+- It comes equipped with an ORM
+- Easy and fast setup process
 
